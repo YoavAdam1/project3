@@ -70,7 +70,7 @@ with tab1:
         )
 
         # חיזוי בזמן אמת
-        predicted_price = model.predict(np.array([[user_km, user_year]]))[0]
+        predicted_price = user_year*w1 + user_km*w2 + user_fuel*w3 + b
 
     with col_result:
         st.markdown("### 🏷️ התחזית המיידית:")
