@@ -35,6 +35,10 @@ b = -95993675.8341209
 baseline_prediction = np.mean(y)
 baseline_loss = np.mean(np.abs(y - baseline_prediction))
 
+y_hat = model.predict(X)
+
+model_loss = np.mean(np.abs(y - y_hat))
+
 
 
 # ==============================================================================
