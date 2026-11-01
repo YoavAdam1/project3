@@ -30,6 +30,8 @@ w2 = 47798.977042016646
 w3 = 236914.17367747813
 b = -95993675.8341209
 
+baseline_prediction = np.mean(y)
+baseline_loss = np.mean(np.abs(y - baseline_prediction))
 
 
 
