@@ -120,8 +120,8 @@ with tab1:
         
         user_fuel = st.slider(
             " סוג דלק: ",
-            min_value=int(data[FEATURE3_COLUMN].max()),
-            max_value=int(data[FEATURE3_COLUMN].min()),
+            min_value=1,
+            max_value=5,
             value=5,
             step=-1
         )
