@@ -35,6 +35,12 @@ b = -95993675.8341209
 baseline_prediction = np.mean(y)
 baseline_loss = np.mean(np.abs(y - baseline_prediction))
 
+
+model = LinearRegression()
+X = np.column_stack((X1_reshaped, X2_reshaped, X3_reshaped))
+model.fit(X, y)
+
+
 y_hat = model.predict(X)
 
 model_loss = np.mean(np.abs(y - y_hat))
