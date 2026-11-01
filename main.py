@@ -20,31 +20,69 @@ import kagglehub
 
 path = kagglehub.dataset_download(KAGGLE_DATASET)
 
+
+
+import pandas as pd
+import os
+
 csv_path = os.path.join(path, "CAR DETAILS FROM CAR DEKHO.csv")
 data = pd.read_csv(csv_path)
 
 data.head()
 
+
+
+
+
+
+X1 = data[FEATURE1_COLUMN].to_numpy()
+X2 = data[FEATURE2_COLUMN].to_numpy()
+X3 = data[FEATURE3_COLUMN].to_numpy()
 y = data[TARGET_COLUMN].to_numpy()
 
-w1 = -1.3391414620302406
-w2 = 47798.977042016646
-w3 = 236914.17367747813
-b = -95993675.8341209
+for i in range(4340):
+    if(X3[i] == 'Petrol'):
+        X3[i] = 1
+
+    elif X3[i] == 'Diesel':
+        X3[i] = 2
+    elif X3[i] == 'CNG':
+        X3[i] = 3
+    elif X3[i] == 'LPG':
+        X3[i] = 4
+    elif X3[i] == 'Electric':
+        X3[i] = 5
+
+
 
 baseline_prediction = np.mean(y)
 baseline_loss = np.mean(np.abs(y - baseline_prediction))
 
 
+
+
+
+from sklearn.linear_model import LinearRegression
+
+X1_reshaped = X1.reshape(-1, 1)
+X2_reshaped = X2.reshape(-1, 1)
+X3_reshaped = X3.reshape(-1, 1)
 model = LinearRegression()
 X = np.column_stack((X1_reshaped, X2_reshaped, X3_reshaped))
 model.fit(X, y)
 
 
+
+w1 = model.coef_[0]
+w2 = model.coef_[1]
+w3 = model.coef_[2]
+b = model.intercept_
+
+
+
 y_hat = model.predict(X)
 
 model_loss = np.mean(np.abs(y - y_hat))
-
 
 
 # ==============================================================================
