@@ -20,6 +20,7 @@ import kagglehub
 
 path = kagglehub.dataset_download(KAGGLE_DATASET)
 
+csv_path = os.path.join(path, "CAR DETAILS FROM CAR DEKHO.csv")
 data = pd.read_csv(csv_path)
 
 data.head()
