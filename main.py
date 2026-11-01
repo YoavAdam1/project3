@@ -117,6 +117,14 @@ with tab1:
             value=60000,
             step=-5000
         )
+        
+        user_fuel = st.slider(
+            " סוג דלק: ",
+            min_value=int(data[FEATURE3_COLUMN].max()),
+            max_value=int(data[FEATURE3_COLUMN].min()),
+            value=5,
+            step=-1
+        )
 
         # חיזוי בזמן אמת
         predicted_price = model.predict(np.array([[user_km, user_year]]))[0]
