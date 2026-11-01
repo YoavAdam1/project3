@@ -74,8 +74,8 @@ model.fit(X, y)
 
 
 w1 = model.coef_[0]
-w2 = model.coef_[1]
-w3 = model.coef_[2]
+w2 = 47798.977042016646
+w3 = 236914.17367747813
 b = model.intercept_
 
 
