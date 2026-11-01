@@ -10,6 +10,18 @@ from sklearn.linear_model import LinearRegression
 # 1. הקוד המקורי שלך (אימון המודל וטעינת הנתונים)
 # ==============================================================================
 
+KAGGLE_DATASET = "nehalbirla/vehicle-dataset-from-cardekho"
+FEATURE1_COLUMN = "km_driven"
+FEATURE2_COLUMN = "year"
+FEATURE3_COLUMN = "fuel"
+TARGET_COLUMN = "selling_price"
+
+import kagglehub
+
+path = kagglehub.dataset_download(KAGGLE_DATASET)
+
+
+
 w1 = -1.3391414620302406
 w2 = 47798.977042016646
 w3 = 236914.17367747813
