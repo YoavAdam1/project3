@@ -46,8 +46,8 @@ with tab1:
         # סליידר שנת ייצור (מוגדר מהגבוה לנמוך)
         user_year = st.slider(
             "שנת ייצור:",
-            min_value=int(data[FEATURE2_COLUMN].max()),
-            max_value=int(data[FEATURE2_COLUMN].min()),
+            min_value=1992,
+            max_value=2017,
             value=2016,
             step=-1
         )
