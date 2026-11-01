@@ -20,7 +20,9 @@ import kagglehub
 
 path = kagglehub.dataset_download(KAGGLE_DATASET)
 
+data = pd.read_csv(csv_path)
 
+data.head()
 
 w1 = -1.3391414620302406
 w2 = 47798.977042016646
