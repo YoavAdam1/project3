@@ -25,6 +25,8 @@ data = pd.read_csv(csv_path)
 
 data.head()
 
+y = data[TARGET_COLUMN].to_numpy()
+
 w1 = -1.3391414620302406
 w2 = 47798.977042016646
 w3 = 236914.17367747813
